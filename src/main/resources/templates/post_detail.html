@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Můj blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+<h1 th:text="${post.title}"></h1>
+
+<div class="postdetail">
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted" th:text="${post.author}">Card subtitle</h6>
+            <h6 class="card-subtitle mb-1 text-muted" th:text="${#temporals.format(post.published, 'd. MMMM yyyy')}">Card subtitle</h6>
+            <p class="card-text" th:text="${post.perex}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text" th:text="${post.body}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a class="card-link" href="/post" >Go back</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
